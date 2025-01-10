@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
         config={
         "batch_size" : 32,
-        "learning_rate": 0.001,
+        "learning_rate": 0.0001,
         "architecture": "CNN",
         "epochs": 10,
         "num_classes": 6,
