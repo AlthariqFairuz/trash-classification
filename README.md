@@ -35,7 +35,7 @@ Before running the project, you'll need to set up authentication for necessary s
 2. Obtain your API key from the [authorization page](https://wandb.ai/authorize)
 3. Set up your API key in your environment:
    ```bash
-   export WANDB_API_KEY='your-api-key'
+   WANDB_API_KEY='your-api-key'
    ```
 #### However, it's `HIGHLY RECOMMENDED` to run the notebook in google colab in order to get the model instead of running it in local
 
