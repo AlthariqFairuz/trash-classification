@@ -69,5 +69,5 @@ if __name__ == "__main__":
     optimizer = optim.Adam(model.parameters(), lr=0.0001)
     
     train_loader, val_loader, _ = load_data()
-    train_model(model, train_loader, val_loader, criterion, optimizer, epochs=50, patience=5)
+    train_model(model, train_loader, val_loader, criterion, optimizer, epochs=10, patience=3)
     wandb.finish()
