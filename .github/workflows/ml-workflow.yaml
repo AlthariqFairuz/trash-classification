@@ -37,4 +37,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: trained-model
-        path: model/best_model.pth
+        path: trained-model/best_model.pth
