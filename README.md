@@ -2,7 +2,6 @@
 
 This project implements a Convolutional Neural Network (CNN) model for automated trash classification using the TrashNet dataset. You can get the dataset [here](https://huggingface.co/datasets/garythung/trashnet).
 
-`Note: see the github workflow on "chore: fix epochs"`
 ## 📋 Overview
 
 The project uses a CNN architecture to classify images of trash into different categories:
