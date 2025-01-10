@@ -58,5 +58,5 @@ if __name__ == "__main__":
     _, _, test_loader = load_data()
     criterion = torch.nn.CrossEntropyLoss()
     
-    test_loss, test_acc = test_model('best_model.pth', test_loader, criterion, device)
+    test_loss, test_acc = test_model('trained-model/best_model.pth', test_loader, criterion, device)
     print(f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.4f}")
