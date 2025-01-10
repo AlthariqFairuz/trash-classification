@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
 import wandb
+import os 
 
 def test_model(model_path, test_loader, criterion, device):
     model = CNN()
@@ -43,6 +44,7 @@ def test_model(model_path, test_loader, criterion, device):
     return test_loss, test_acc
 
 if __name__ == "__main__":
+    wandb.login(key=os.getenv('WANDB_API_KEY'))
     wandb.init(
         project="cnn-trash-classicifations",
 
@@ -60,3 +62,4 @@ if __name__ == "__main__":
     
     test_loss, test_acc = test_model('trained-model/best_model.pth', test_loader, criterion, device)
     print(f"Test Loss: {test_loss:.4f}, Test Acc: {test_acc:.4f}")
+
