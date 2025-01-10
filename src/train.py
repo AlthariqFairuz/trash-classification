@@ -72,4 +72,4 @@ if __name__ == "__main__":
     
     train_loader, val_loader, _ = load_data()
     train_model(model, train_loader, val_loader, criterion, optimizer, epochs=1, patience=3)
-
+    wandb.finish()

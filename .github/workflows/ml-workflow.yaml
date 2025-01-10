@@ -31,6 +31,8 @@ jobs:
         python src/train.py
     
     - name: Evaluate model
+      env:
+          WANDB_API_KEY: ${{ secrets.WANDB_API_KEY }}
       run: |
         python src/evaluate.py
     
