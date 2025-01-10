@@ -5,6 +5,7 @@ import wandb
 from tqdm import tqdm
 from model import CNN
 from utils import load_data, evaluate_model
+import os
 
 def train_model(model, train_loader, val_loader, criterion, optimizer, epochs, patience):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -44,7 +45,8 @@ def train_model(model, train_loader, val_loader, criterion, optimizer, epochs, p
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             patience_counter = 0
-            torch.save(model.state_dict(), 'best_model.pth')
+            os.makedirs('trained-model', exist_ok=True)
+            torch.save(model.state_dict(), 'trained-model/best_model.pth')
         else:
             patience_counter += 1
             if patience_counter >= patience:
@@ -69,5 +71,5 @@ if __name__ == "__main__":
     optimizer = optim.Adam(model.parameters(), lr=0.0001)
     
     train_loader, val_loader, _ = load_data()
-    train_model(model, train_loader, val_loader, criterion, optimizer, epochs=10, patience=3)
+    train_model(model, train_loader, val_loader, criterion, optimizer, epochs=1, patience=3)
     wandb.finish()
